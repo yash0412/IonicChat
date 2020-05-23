@@ -4,4 +4,54 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content> </ion-content>
+<ion-content>
+  <form
+    [formGroup]="phoneNumberForm"
+    (ngSubmit)="sendOtp()"
+    *ngIf="!showOtpInput"
+  >
+    <ion-item>
+      <ion-label position="fixed">+91</ion-label>
+      <ion-input
+        inputmode="tel"
+        autofocus
+        clearInput
+        enterkeyhint="submit"
+        placeholder="Your Number"
+        formControlName="phoneNumber"
+      ></ion-input>
+    </ion-item>
+    <ion-button
+      item-right
+      type="submit"
+      expand="block"
+      [disabled]="phoneNumberForm.invalid"
+      >Send Otp</ion-button
+    >
+  </form>
+  <form [formGroup]="otpForm" (ngSubmit)="verifyOtp()" *ngIf="showOtpInput">
+    <ion-item>
+      <ion-label position="fixed">OTP</ion-label>
+      <ion-input
+        inputmode="tel"
+        autofocus
+        clearInput
+        enterkeyhint="submit"
+        placeholder="OTP in SMS"
+        formControlName="otp"
+      ></ion-input>
+    </ion-item>
+    <ion-button
+      item-right
+      type="submit"
+      expand="block"
+      [disabled]="otpForm.invalid"
+      >Verify Otp</ion-button
+    >
+  </form>
+  <ion-fab vertical="center" horizontal="center" slot="fixed">
+    <ion-fab-button color="danger" (click)="signInWithGoogle()">
+      <ion-icon name="logo-google"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

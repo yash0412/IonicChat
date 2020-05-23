@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "836700755946",
+    "firebase_url": "https://chat-app-ionic-a6233.firebaseio.com",
+    "project_id": "chat-app-ionic-a6233",
+    "storage_bucket": "chat-app-ionic-a6233.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836700755946:android:ea338e95af7eb45fde4493",
+        "android_client_info": {
+          "package_name": "com.yash.chatApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "836700755946-oobbe5ldo0vj7cdpilijfu4bv522ttni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCltb7v4vesmDhNE4XBK2ZZyh6FV0ahVP0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "836700755946-oobbe5ldo0vj7cdpilijfu4bv522ttni.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836700755946:android:6237e7da0bcc18e0de4493",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "836700755946-oobbe5ldo0vj7cdpilijfu4bv522ttni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCltb7v4vesmDhNE4XBK2ZZyh6FV0ahVP0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "836700755946-oobbe5ldo0vj7cdpilijfu4bv522ttni.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
