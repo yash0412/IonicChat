@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Enter Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-input
+    type="file"
+    accept="image/*"
+    #imageInput
+    [hidden]="true"
+    (change)="imageSelected($event)"
+  ></ion-input>
+  <div class="user-image">
+    <ion-img
+      [src]="userImage||'/assets/avatar.png'"
+      (click)="openImageInput(imageInput)"
+    ></ion-img>
+    <ion-text>Click on image to change</ion-text>
+  </div>
+</ion-content>
