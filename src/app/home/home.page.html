@@ -17,13 +17,13 @@
     <strong>Welcome to the Chat App</strong>
     <hr />
     <p>
-      <ion-button>
+      <ion-button (click)="presentModal()">
         <ion-icon color="dark" slot="start" name="call-sharp"></ion-icon>
         Login With Mobile
       </ion-button>
     </p>
     <p>
-      <ion-button color="dark">
+      <ion-button color="dark" (click)="loginWithGoogle()">
         <ion-icon color="danger" slot="start" name="logo-google"></ion-icon>
         Login With Google
       </ion-button>

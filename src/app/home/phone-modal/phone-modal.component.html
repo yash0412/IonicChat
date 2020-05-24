@@ -1,38 +1,36 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Login</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">
+        <ion-icon name="close-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Login</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <form
-    [formGroup]="phoneNumberForm"
-    (ngSubmit)="sendOtp()"
-    *ngIf="!showOtpInput"
-  >
+  <form [formGroup]="phoneNumberForm" (ngSubmit)="sendOtp()">
     <ion-item>
       <ion-label position="fixed">+91</ion-label>
       <ion-input
         inputmode="tel"
-        autofocus
         clearInput
         enterkeyhint="submit"
         placeholder="Your Number"
         formControlName="phoneNumber"
+        [maxlength]="10"
       ></ion-input>
     </ion-item>
     <ion-button
       item-right
       type="submit"
       expand="block"
-      [disabled]="phoneNumberForm.invalid"
-      >Send Otp</ion-button
+      [disabled]="phoneNumberForm.invalid || loading"
+      *ngIf="!showOtpInput"
     >
+      Send Otp <ion-spinner name="dots" *ngIf="loading"></ion-spinner>
+    </ion-button>
   </form>
   <form [formGroup]="otpForm" (ngSubmit)="verifyOtp()" *ngIf="showOtpInput">
     <ion-item>
@@ -50,13 +48,9 @@
       item-right
       type="submit"
       expand="block"
-      [disabled]="otpForm.invalid"
-      >Verify Otp</ion-button
+      [disabled]="otpForm.invalid || loading"
     >
+      Verify Otp <ion-spinner name="dots" *ngIf="loading"></ion-spinner>
+    </ion-button>
   </form>
-  <ion-fab vertical="center" horizontal="center" slot="fixed">
-    <ion-fab-button color="danger" (click)="signInWithGoogle()">
-      <ion-icon name="logo-google"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
 </ion-content>
