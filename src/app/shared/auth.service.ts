@@ -7,8 +7,8 @@ import { GooglePlus } from "@ionic-native/google-plus/ngx";
 export class AuthService {
   constructor(private googlePlus: GooglePlus) {}
 
-  signInWithGoogle() {
-    this.googlePlus
+  signInWithGoogle(): Promise<any> {
+    return this.googlePlus
       .login({})
       .then(res => console.log(res))
       .catch(err => console.error(err));

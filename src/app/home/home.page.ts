@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { ModalController } from "@ionic/angular";
 import { PhoneModalComponent } from "./phone-modal/phone-modal.component";
 import { AuthService } from "../shared/auth.service";
+import { Router } from "@angular/router";
 @Component({
   selector: "app-home",
   templateUrl: "home.page.html",
@@ -10,7 +11,8 @@ import { AuthService } from "../shared/auth.service";
 export class HomePage {
   constructor(
     private modalController: ModalController,
-    private auth: AuthService
+    private auth: AuthService,
+    private router: Router
   ) {}
 
   async presentModal() {
@@ -23,6 +25,8 @@ export class HomePage {
   }
 
   loginWithGoogle() {
-    this.auth.signInWithGoogle();
+    this.auth.signInWithGoogle().then(() => {
+      this.router.navigate(["user-details"]);
+    });
   }
 }
